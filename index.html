@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Fons/icon.ico" type="image/x-icon">
+    <title>Anti Key Bypasser</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <label class="theme-toggle">
+        <input type="checkbox" id="themeCheckbox" onchange="toggleTheme()">
+        <span class="toggle-icon">☀️</span>
+    </label>
+    <div class="container">
+        <h1>Key Bypasser</h1>
+        <p>Вставь ссылку с ключом.</p>
+        <input type="text" id="linkInput" placeholder="https://AntiKeyBypasser.com">
+        <br>
+        <button onclick="bypassLink()">Обойти</button>
+        <div class="auto-redirect">
+            <label class="redirect-toggle">
+                <input type="checkbox" id="autoRedirectCheckbox" checked>
+                <span class="toggle-slider"></span>
+            </label>
+            <span class="redirect-label">Auto Redirect</span>
+        </div>
+        <div id="result"></div>
+        <div id="finalLink"></div>
+    </div>
+    <footer>
+        <p>Полезные ссылки:</p>
+        <a href="https://discord.gg/XBTzzFuH" target="_blank">Discord</a> |
+        <a href="https://www.donationalerts.com/r/primsx" target="_blank">Donationalerts</a>
+    </footer>
+    <script src="bypass.js"></script>
+</body>
+</html>

@@ -1,0 +1,340 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #242424;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(2px);
+    color: #000;
+    transition: color 0.3s;
+}
+
+body.dark-theme {
+    color: #fff;
+}
+
+body.dark-theme .container,
+body.dark-theme footer,
+body.dark-theme .redirect-label,
+body.dark-theme footer a,
+body.dark-theme button {
+    color: #fff;
+}
+
+body.dark-theme .theme-toggle .toggle-icon {
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    background: rgba(212, 216, 221, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    transition: background 0.3s, box-shadow 0.3s;
+    margin-top: 60px;
+    width: 350px;
+    max-width: 90%;
+}
+
+body.dark-theme .container {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+input[type="text"] {
+    width: 85%;
+    padding: 10px;
+    margin: 15px 0;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0057b4;
+    transform: scale(1.2);
+}
+
+#result {
+    margin-top: 20px;
+    word-wrap: break-word;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 18px;
+}
+
+#result.processing {
+    background-color: rgba(255, 255, 0, 0.2);
+    animation: pulse 1s infinite;
+    font-weight: bold;
+    font-style: italic;
+    text-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme #result.processing {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+
+#result.success {
+    font-weight: 600;
+    font-size: 20px;
+    text-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    color: #000;
+}
+
+body.dark-theme #result.success {
+    text-shadow: 0 0 3px rgba(255, 255, 255, 0.4);
+    color: #fff;
+}
+
+#finalLink {
+    margin-top: 15px;
+    padding: 10px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+#finalLink a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#finalLink a:hover {
+    text-decoration: underline;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.auto-redirect {
+    margin-top: 10px;
+    font-size: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.redirect-toggle {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 28px;
+}
+
+.redirect-toggle input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.redirect-toggle .toggle-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 45px;
+    height: 25px;
+    background-color: #2196F3;
+    border-radius: 28px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.redirect-toggle .toggle-slider::after {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    left: 3px;
+    top: 5px;
+    background-color: white;
+    border-radius: 50%;
+    transition: transform 0.3s;
+}
+
+.redirect-toggle input[type="checkbox"]:checked + .toggle-slider {
+    background-color: #555;
+}
+
+.redirect-toggle input[type="checkbox"]:checked + .toggle-slider::after {
+    transform: translateX(23px);
+}
+
+.redirect-toggle .toggle-slider:hover {
+    background-color: #1976D2;
+}
+
+.redirect-toggle input[type="checkbox"]:checked + .toggle-slider:hover {
+    background-color: #444;
+}
+
+.redirect-label {
+    font-size: 15px;
+    white-space: nowrap;
+}
+
+footer {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 14px;
+    background: rgba(212, 216, 221, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(15px);
+    transition: background 0.3s, box-shadow 0.3s;
+    width: 250px;
+    max-width: 90%;
+}
+
+body.dark-theme footer {
+    background: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 5px;
+    padding: 5px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: scale(1.5);
+}
+
+footer p {
+    margin-top: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    background-color: #0057b4;
+}
+
+footer #onlineUsers {
+    color: #007bff; /* Синий цвет для числа */
+    font-weight: bold;
+}
+
+body.dark-theme footer #onlineUsers {
+    color: #00b7ff; /* Светло-синий для тёмной темы */
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.theme-toggle input[type="checkbox"] {
+    display: none;
+}
+
+.theme-toggle .toggle-icon {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #555;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: background-color 0.3s;
+    user-select: none;
+}
+
+.theme-toggle input[type="checkbox"]:checked + .toggle-icon {
+    background-color: #333;
+}
+
+.theme-toggle .toggle-icon:hover {
+    background-color: #444;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+        margin-top: 50px;
+        width: 90%;
+    }
+
+    input[type="text"] {
+        width: 80%;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    footer {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    footer a {
+        transform: scale(1.2);
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+
+    .theme-toggle .toggle-icon {
+        padding: 6px 12px;
+        font-size: 18px;
+    }
+
+    .auto-redirect {
+        font-size: 10px;
+        gap: 5px;
+    }
+
+    .redirect-toggle {
+        width: 40px;
+        height: 22px;
+    }
+
+    .redirect-toggle .toggle-slider {
+        width: 40px;
+        height: 22px;
+    }
+
+    .redirect-toggle .toggle-slider::after {
+        width: 16px;
+        height: 16px;
+        left: 3px;
+        top: 3px;
+    }
+
+    .redirect-toggle input[type="checkbox"]:checked + .toggle-slider::after {
+        transform: translateX(16px);
+    }
+}
